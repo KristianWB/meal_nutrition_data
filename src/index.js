@@ -13,7 +13,11 @@ class NameForm extends React.Component {
       weight: 'grams',
       kiloCalories: 'kCal',
       price: 'DKK',
-      kiloJoule: 'kJ'
+      kiloJoule: 'kJ',
+      fat: 'grams',
+      carbohydrate: '',
+      fiber: '',
+      protein: ''
     };
 
     // Bindings
@@ -21,6 +25,11 @@ class NameForm extends React.Component {
     this.handleChangeKiloCalories = this.handleChangeKiloCalories.bind(this);
     this.handleChangePrice = this.handleChangePrice.bind(this);    
     this.handleChangeKiloJoule = this.handleChangeKiloJoule.bind(this);
+    this.handleChangeFat = this.handleChangeFat.bind(this);
+    this.handleChangeCarbohydrate = this.handleChangeCarbohydrate.bind(this);
+    this.handleChangeFiber = this.handleChangeFiber.bind(this);
+    this.handleChangeProtein = this.handleChangeProtein.bind(this);
+
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -38,16 +47,29 @@ class NameForm extends React.Component {
   handleChangeKiloJoule(event) {
     this.setState({kiloJoule: event.target.value});
   }
+  handleChangeFat(event) {
+    this.setState({fat: event.target.value});
+  }
+  handleChangeCarbohydrate(event) {
+    this.setState({carbohydrate: event.target.value});        
+}
+handleChangeFiber(event) {
+  this.setState({fiber: event.target.value});        
+}
+handleChangeProtein(event) {
+  this.setState({protein: event.target.value});        
+}
 
   
   handleSubmit(event) {
-    alert('Data was submitted: ' + this.state.weight + this.state.kiloCalories + this.state.price + this.state.kiloJoule);
+    alert('Data was submitted: ' + this.state.weight + this.state.kiloCalories + this.state.price + this.state.kiloJoule + this.state.fat);
     event.preventDefault();
   }
 
+  //Rendering the html code for page
   render() {
     return (
-      <form class='ingridiens_data' onSubmit={this.handleSubmit}>
+      <form className='recipe_data' onSubmit={this.handleSubmit}>
         <label>
           Weight
           <input type="text" value={this.state.weight} onChange={this.handleChangeWeight} />
@@ -63,6 +85,22 @@ class NameForm extends React.Component {
         <label>
           kiloJoule
           <input type="text" value={this.state.kiloJoule} onChange={this.handleChangeKiloJoule} />
+        </label>
+        <label>
+          Fat
+          <input type="text" value={this.state.fat} onChange={this.handleChangeFat} />
+        </label>
+        <label>
+          Carbohydrates
+          <input type="text" value={this.state.carbohydrate} onChange={this.handleChangeCarbohydrate} />
+        </label>
+        <label>
+          Fibers
+          <input type="text" value={this.state.fiber} onChange={this.handleChangeFiber} />
+        </label>
+        <label>
+          Proteins
+          <input type="text" value={this.state.protein} onChange={this.handleChangeProtein} />
         </label>
         <input type="submit" value="Submit" />
       </form>
