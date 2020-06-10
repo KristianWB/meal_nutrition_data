@@ -7,4 +7,5 @@ Kristian Witt Bergqvist
 
 Project initialized
 
-testing netlify
+Stage two in the project consists of designing a website which uses php, react, connects to a user login database,
+a welcomepage a loginpage and after this a nutrition calculater page
