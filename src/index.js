@@ -8,7 +8,6 @@ function Test() {
   return (
     <div className="Test">
       <header className="Test-header">
-        <img src={logo} className="Test-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
