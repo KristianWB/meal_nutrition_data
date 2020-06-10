@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+/*
 function Test() {
   return (
     <div className="Test">
@@ -23,10 +24,11 @@ function Test() {
     </div>
   );
 }
+*/
 
 ReactDOM.render(
   <React.StrictMode>
-    <Test />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
