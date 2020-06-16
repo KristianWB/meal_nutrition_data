@@ -1,1 +1,0 @@
-folder for building in netlify
