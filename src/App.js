@@ -13,23 +13,52 @@ class App extends Component {
       carbohydrate: 0,
       protein: 0,
       fat: 0,
-      total: 0    
+      total: 0   
     };
 
+  //Methods for handling the submissions (Binding)
     this.handleMass = this.handleMass.bind(this);
+    this.handleCarbohydrate = this.handleCarbohydrate.bind(this);
+    this.handleProtein = this.handleProtein.bind(this);
+    this.handleFat = this.handleFat.bind(this);
 
 
-
+    //Methods for handling the submissions (Binding)
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+//Methods for handling the submissions (Calculation and storing)
   handleMass(event) {
-    let xMass = event.target.value * 4.1;
-    this.setState({mass: xMass});
+      this.setState({mass: event.target.value});
+  }
+
+  handleCarbohydrate(event) {
+    let xCarbohydrate = event.target.value * 4.1;
+    this.setState({carbohydrate: xCarbohydrate})
+  }
+
+  handleProtein(event) {
+    let xProtein = event.target.value * 4.1;
+    this.setState({protein: xProtein});
+  }
+
+  handleFat(event) {
+    let xFat = event.target.value * 9.1;
+    this.setState({fat: xFat});
   }
 
   handleSubmit(event) {
-    alert('the mass of the meal in grams is: ' + this.state.mass);
+    let xTotal = this.state.carbohydrate + this.state.protein + this.state.fat;
+    this.setState({total: xTotal});
+
+    alert(
+      'the mass of the meal in grams is: ' + this.state.mass + '\n' +
+      'the Carbohydrate content of the meal in kCal is: ' + this.state.carbohydrate + '\n' +
+      'the Protein content of the meal in kCal is: ' + this.state.protein + '\n' +
+      'the fat of the meal in kCal is: ' + this.state.fat + '\n' +
+      'the total kCal value of the meal is: ' + this.state.total
+    );
+
     event.preventDefault();
   }
   
@@ -48,32 +77,63 @@ class App extends Component {
           <form onSubmit={this.handleSubmit}>
             {/*<!-- Typing in the amount of food in grams -->*/}
             <label>
-              Amount in grams
-              <input type="number" value={this.state.value} onChange={this.handleMass}/>
+              Type in the amount in grams
+              <input type="number" value={this.value} onChange={this.handleMass}/>
             </label>
 
             {/*<!-- Typing in the amount of carbohydrates in grams -->*/}
             <label>
-              Amount of carbohydrates in grams pr 100g
-              <input type="number" id="carbohydrate" name="carbohydrate"/>
+              Type in the amount of carbohydrates in grams pr 100g
+              <input type="number" value={this.value} onChange={this.handleCarbohydrate}/>
             </label>
 
             {/*<!-- Typing in the amount of proteins in grams -->*/}
             <label>
-              Amount of proteins in grams pr. 100g
-              <input type="number" id="protein" name="protein"/>
+              Type in the amount of proteins in grams pr. 100g
+              <input type="number" value={this.value} onChange={this.handleProtein}/>
             </label>
 
             {/*<!-- Typing in the amount of fat in grams -->*/}
             <label>
-              Amount of fat in grams pr. 100g
-              <input type="number" id="fat" name="fat"/>
+              Type in the amount of fat in grams pr. 100g
+              <input type="number" value={this.value} onChange={this.handleFat}/>
             </label>
             
             {/*<!-- Submitting the values -->*/}
             <input type="submit" value="Submit"/>
               
           </form>
+
+          {/*<!-- Setting up the fill in form  --> */}
+          <table>
+            {/*<!-- Typing in the amount of food in grams -->*/}
+            <label>
+              Total amount in grams
+              <input type="number" value={this.value} onChange={this.handleMass}/>
+            </label>
+
+            {/*<!-- Typing in the amount of carbohydrates in grams -->*/}
+            <label>
+              Amount of kCal from carbohydrates in grams pr 100g
+              <input type="number" value={this.value} onChange={this.handleCarbohydrate}/>
+            </label>
+
+            {/*<!-- Typing in the amount of proteins in grams -->*/}
+            <label>
+              Amount of kCal from proteins in grams pr. 100g
+              <input type="number" value={this.value} onChange={this.handleProtein}/>
+            </label>
+
+            {/*<!-- Typing in the amount of fat in grams -->*/}
+            <label>
+              Amount of KcAL from fat in grams pr. 100g
+              <input type="number" value={this.value} onChange={this.handleFat}/>
+            </label>
+            
+            {/*<!-- Submitting the values -->*/}
+            <input type="submit" value="Submit"/>
+              
+          </table>
 
         </div>
 
