@@ -1,5 +1,5 @@
 import React, { Component} from 'react';
-import logo2 from './media/logo2.jpg';
+// import logo2 from './media/logo2.jpg';
 import './App.css';
 //import TableApp from './props/TableApp';
 import Calculator from './props/Calculator'
