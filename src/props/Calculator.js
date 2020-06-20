@@ -1,4 +1,5 @@
 import React from 'react'
+import './Calculator.css'
 
 function Sum(a, b, c) {
 
@@ -33,25 +34,26 @@ function Sum(a, b, c) {
     }
   
     // Handle functions for directing values in DOM to state
-    handleCarbohydrateMassChange(e) {
-      this.setState({carbohydrateMass: e.target.value});
-    }
-  
-    handleProteinMassChange(e) {
-      this.setState({proteinMass: e.target.value});
-    }
-  
-    handleFatMassChange(e) {
-      this.setState({fatMass: e.target.value});
-    }
-  
-    handleMassButton(e) {
-      this.setState({totalMass: e.target.value});
-    }
-  
-    handleKCalButton(e) {
-      this.setState({kCal: e.target.value});
-    }
+        handleCarbohydrateMassChange(e) {
+        this.setState({carbohydrateMass: e.target.value});
+        }
+    
+        handleProteinMassChange(e) {
+        this.setState({proteinMass: e.target.value});
+        }
+    
+        handleFatMassChange(e) {
+        this.setState({fatMass: e.target.value});
+        }
+    
+        handleMassButton(e) {
+        this.setState({totalMass: e.target.value});
+        }
+    
+        handleKCalButton(e) {
+        this.setState({kCal: e.target.value});
+        }
+    // Handle functions end here
     
   
     render() {
@@ -63,8 +65,8 @@ function Sum(a, b, c) {
       const kCal = this.state.kCal;
   
       return (
-        <div>
-          <fieldset>
+        <div className="Calculator-box" border="5">
+          <fieldset border= "1">
             <legend>Enter nutrition values in grams</legend>
             
             <legend>Enter carbohydrate mass</legend>
@@ -81,13 +83,16 @@ function Sum(a, b, c) {
           </fieldset> 
   
           <fieldset>
-            <legend>Nutritional calculations {totalMass}</legend>
-  
+            <legend>Nutritional calculations</legend>
+
+              
             <legend>Press button to calculate the total mass in grams</legend>
             <button value={Sum(carbohydrateMass, proteinMass, fatMass)} onClick={this.handleMassButton}>Click me to calculate total mass</button>
-  
-            <legend>The total kiloCalorie is: {kCal} kCal</legend>
+            <legend>Total mass of nutrition in grams is:  {totalMass}</legend>
+
+            <legend>Press button to calculate the kCal value</legend>            
             <button value={KCalCalculator(carbohydrateMass, proteinMass, fatMass)} onClick={this.handleKCalButton}>Click me to calculate total kCal</button>
+            <legend>The total kiloCalorie is: {kCal} kCal</legend>
           </fieldset>        
         </div>
       );

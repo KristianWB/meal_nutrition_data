@@ -1,0 +1,16 @@
+.Calculator-box {
+    background-color: green;
+    border-color: indigo;
+}
+
+fieldset {
+    text-align: center;
+    width:20%; 
+    margin-top: 50px;
+    margin-bottom: 50;
+    margin-left: auto; 
+    margin-right: auto;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    border-radius: 50px;
+  }
