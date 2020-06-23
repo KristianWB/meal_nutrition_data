@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `login_course`
+-- Database: `kb_meal`
 --
 
 -- --------------------------------------------------------
@@ -30,8 +30,7 @@ CREATE TABLE `users` (
   `user_id` int(5) UNSIGNED NOT NULL COMMENT 'User ID',
   `email` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'User email',
   `password` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'User password',
-  `reg_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'User creation date'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Users table';
+);
 
 --
 -- Dumping data for table `users`

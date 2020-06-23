@@ -1,3 +1,5 @@
+
+
 <?php
 
 	//allow the config
@@ -9,6 +11,8 @@
 
 	$User = new User($_SESSION['user_id']);
 ?>
+
+
 
 <?DOCTYPE-html>
 <html lang="en">
@@ -32,7 +36,33 @@
 				<p>We have your last name listed as <?php echo $User->l_name;?>.</p>
 				<p>We have your email listed as <?php echo $User->email;?>.</p>
 				<p><a href="/logout.php">Logout</a></p>
+				
+		<!-- Setting up the fill in form -->
+			<form form action="/ajax/calculator.php" method="post">
+				<!-- Typing in the amount of food in grams -->
+				<label for="amount">Amount in grams</label>
+				<input type="number" id="amount" name="amount"><br><br>
+
+				<!-- Typing in the amount of carbohydrates in grams -->
+				<label for="carbohydrate">Amount of carbohydrates in grams pr 100g</label>
+				<input type="number" id="carbohydrate" name="carbohydrate"><br><br>
+
+				<!-- Typing in the amount of proteins in grams -->
+				<label for="protein">Amount of proteins in grams pr. 100g</label>
+				<input type="number" id="protein" name="protein"><br><br>
+
+				<!-- Typing in the amount of fat in grams -->
+				<label for="fat">Amount of fat in grams pr. 100g</label>
+				<input type="number" id="fat" name="fat"><br><br>
+				
+				<!-- Submitting the values -->
+				<input type="submit" value="Submit">
+			</form>
 			</div>
+
+					
+
+
 			<?php require_once "inc/footer.php"; ?>
 		</body>
 	</html>

@@ -11,7 +11,6 @@ class User {
 
 	public $email;
 	public $user_id;
-	public $reg_time;
 	public $f_name;
 	public $l_name;
 
@@ -20,7 +19,7 @@ class User {
 
 		$user_id = Filter::Int( $user_id );
 
-		$user = $this->con->prepare("SELECT user_id, email, reg_time, f_name, l_name FROM users WHERE user_id = :user_id LIMIT 1");
+		$user = $this->con->prepare("SELECT user_id, email, f_name, l_name FROM users WHERE user_id = :user_id LIMIT 1");
 		$user->bindParam(':user_id', $user_id, PDO::PARAM_INT);
 		$user->execute();
 
@@ -29,7 +28,6 @@ class User {
 
 			$this->email    = (string) $user->email;
 			$this->user_id  = (int) $user->user_id;
-			$this->reg_time = (string) $user->reg_time;
 			$this->f_name = (string) $user->f_name;
 			$this->l_name = (string) $user->l_name;
 		} else {

@@ -1,4 +1,5 @@
 <?php
+	phpinfo();
 
 	// //allow the config
 	// define(__CONFIG__, true);
@@ -23,6 +24,15 @@
 	</head>
 
 		<body>
+
+			<div>
+				<header class="App-header">
+					<h1>Welcome to the nutrition calculater project</h1>
+					<h2>A better life for a better world</h2>
+					<h3>Scroll down to login in start and calculating nutrition values</h3>
+				<img src="./media/logo2.jpg" class="App-logo2" alt="logo2" />       
+				</header>
+			</div>
 
 			<div class="uk-section uk-container">
 				<?php
