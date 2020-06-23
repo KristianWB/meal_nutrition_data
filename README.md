@@ -6,5 +6,3 @@ Kristian Witt Bergqvist
 
 
 Project initialized
-
-testing netlify branching 1
