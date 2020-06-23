@@ -1,2 +1,7 @@
 [build]
-  functions = "./src/functions"
+    functions = "./src/functions"
+
+    publish = "/build"
+
+    # Default build command.
+    command = "npm run build"
